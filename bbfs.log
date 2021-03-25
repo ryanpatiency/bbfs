@@ -1,0 +1,1764 @@
+
+bb_init()
+    conn:
+    proto_major =  7
+    proto_minor =  27
+    async_read =  1
+    max_write =  131072
+    max_readahead =  131072
+    capable = 00000ffb
+    want = 00000010
+    max_background =  0
+    congestion_threshold =  0
+    context:
+    fuse = 09bc47a0
+    uid =  0
+    gid =  0
+    pid =  0
+    private_data = 09bc22a0
+    logfile = 09bc42e0
+    rootdir = /home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir
+    umask = 00000
+
+bb_getattr(path="/", statbuf=0x7f827c10)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42300
+    st_mode = 0 40755
+    st_nlink =  2
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  4096
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce7
+    st_mtime = 0x 605c5ce7
+    st_ctime = 0x 605c5ce7
+
+bb_getattr(path="/", statbuf=0x7f004c10)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42300
+    st_mode = 0 40755
+    st_nlink =  2
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  4096
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce7
+    st_mtime = 0x 605c5ce7
+    st_ctime = 0x 605c5ce7
+
+bb_access(path="/", mask=01)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/"
+
+bb_getattr(path="/hi.c", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/hi.c", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/hi.c"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42378
+    st_mode = 0 100644
+    st_nlink =  1
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  636
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce4
+    st_mtime = 0x 605c5ce4
+    st_ctime = 0x 605c5ce4
+
+bb_getattr(path="/", statbuf=0x7f827c10)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42300
+    st_mode = 0 40755
+    st_nlink =  2
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  4096
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce7
+    st_mtime = 0x 605c5ce7
+    st_ctime = 0x 605c5ce7
+
+bb_access(path="/", mask=01)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/"
+
+bb_getattr(path="/.git", statbuf=0x7f827c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/.git", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/.git"
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    si:
+    st_dev =  0
+    st_ino =  0
+    st_mode = 0 0
+    st_nlink =  0
+    st_uid =  0
+    st_gid =  0
+    st_rdev =  0
+    st_size =  0
+    st_blksize =  0
+    st_blocks =  0
+    st_atime = 0x 00000000
+    st_mtime = 0x 00000000
+    st_ctime = 0x 00000000
+
+bb_getattr(path="/.git", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/.git", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/.git"
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    si:
+    st_dev =  0
+    st_ino =  0
+    st_mode = 0 0
+    st_nlink =  0
+    st_uid =  0
+    st_gid =  0
+    st_rdev =  0
+    st_size =  0
+    st_blksize =  0
+    st_blocks =  0
+    st_atime = 0x 00000000
+    st_mtime = 0x 00000000
+    st_ctime = 0x 00000000
+
+bb_getattr(path="/HEAD", statbuf=0x7f827c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/HEAD", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/HEAD"
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    si:
+    st_dev =  0
+    st_ino =  0
+    st_mode = 0 0
+    st_nlink =  0
+    st_uid =  0
+    st_gid =  0
+    st_rdev =  0
+    st_size =  0
+    st_blksize =  0
+    st_blocks =  0
+    st_atime = 0x 00000000
+    st_mtime = 0x 00000000
+    st_ctime = 0x 00000000
+
+bb_opendir(path="/", fi=0x7f004c30)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/"
+    opendir returned 0x0x7f3370001000
+    fi:
+    flags = 0x 00018800
+    fh_old = 0x 00000000
+    writepage =  0
+    direct_io =  0
+    keep_cache =  0
+    fh = 0x 00007f3370001000
+    lock_owner = 0x 0000000000000000
+
+bb_readdir(path="/", buf=0x70000f80, filler=0x7fa70bc0, offset=0, fi=0x7f827c30)
+    readdir returned 0x0x7f3370001030
+calling filler with name bogus.txt
+calling filler with name bogus2.txt
+calling filler with name bogus1.txt
+calling filler with name hi
+calling filler with name hi.c
+calling filler with name ..
+calling filler with name .
+    fi:
+    flags = 0x 00000000
+    fh_old = 0x 7f3370001000
+    writepage =  0
+    direct_io =  0
+    keep_cache =  0
+    fh = 0x 00007f3370001000
+    lock_owner = 0x 0000000000000000
+
+bb_releasedir(path="/", fi=0x7f827c40)
+    fi:
+    flags = 0x 00000000
+    fh_old = 0x 7f3370001000
+    writepage =  0
+    direct_io =  0
+    keep_cache =  0
+    fh = 0x 00007f3370001000
+    lock_owner = 0x 0000000000000000
+
+bb_getattr(path="/bogus.txt", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/bogus.txt", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/bogus.txt"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42376
+    st_mode = 0 100644
+    st_nlink =  1
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  11
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605796b6
+    st_mtime = 0x 605c63ae
+    st_ctime = 0x 605c63ae
+
+bb_getattr(path="/bogus1.txt", statbuf=0x7f827c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/bogus1.txt", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/bogus1.txt"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42352
+    st_mode = 0 100644
+    st_nlink =  1
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  15
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5cf5
+    st_mtime = 0x 605c5cf5
+    st_ctime = 0x 605c5cf5
+
+bb_getattr(path="/bogus2.txt", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/bogus2.txt", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/bogus2.txt"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  10673
+    st_mode = 0 100644
+    st_nlink =  1
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  2
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 6057a269
+    st_mtime = 0x 6057a260
+    st_ctime = 0x 6057a260
+
+bb_getattr(path="/hi", statbuf=0x7f827c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/hi", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/hi"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42478
+    st_mode = 0 100755
+    st_nlink =  1
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  17024
+    st_blksize =  4096
+    st_blocks =  40
+    st_atime = 0x 605c5ce8
+    st_mtime = 0x 605c5ce7
+    st_ctime = 0x 605c5ce7
+
+bb_getattr(path="/", statbuf=0x7f004c10)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42300
+    st_mode = 0 40755
+    st_nlink =  2
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  4096
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce7
+    st_mtime = 0x 605c5ce7
+    st_ctime = 0x 605c5ce7
+
+bb_getattr(path="/", statbuf=0x7f827c10)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42300
+    st_mode = 0 40755
+    st_nlink =  2
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  4096
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce7
+    st_mtime = 0x 605c5ce7
+    st_ctime = 0x 605c5ce7
+
+bb_getattr(path="/hi.c", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/hi.c", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/hi.c"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42378
+    st_mode = 0 100644
+    st_nlink =  1
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  636
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce4
+    st_mtime = 0x 605c5ce4
+    st_ctime = 0x 605c5ce4
+
+bb_getattr(path="/", statbuf=0x7f827c10)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42300
+    st_mode = 0 40755
+    st_nlink =  2
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  4096
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce7
+    st_mtime = 0x 605c5ce7
+    st_ctime = 0x 605c5ce7
+
+bb_getattr(path="/hi.c", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/hi.c", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/hi.c"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42378
+    st_mode = 0 100644
+    st_nlink =  1
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  636
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce4
+    st_mtime = 0x 605c5ce4
+    st_ctime = 0x 605c5ce4
+
+bb_getattr(path="/", statbuf=0x7f827c10)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42300
+    st_mode = 0 40755
+    st_nlink =  2
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  4096
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce7
+    st_mtime = 0x 605c5ce7
+    st_ctime = 0x 605c5ce7
+
+bb_getattr(path="/hi.c", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/hi.c", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/hi.c"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42378
+    st_mode = 0 100644
+    st_nlink =  1
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  636
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce4
+    st_mtime = 0x 605c5ce4
+    st_ctime = 0x 605c5ce4
+
+bb_getattr(path="/", statbuf=0x7f827c10)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42300
+    st_mode = 0 40755
+    st_nlink =  2
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  4096
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce7
+    st_mtime = 0x 605c5ce7
+    st_ctime = 0x 605c5ce7
+
+bb_getattr(path="/hi.c", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/hi.c", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/hi.c"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42378
+    st_mode = 0 100644
+    st_nlink =  1
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  636
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce4
+    st_mtime = 0x 605c5ce4
+    st_ctime = 0x 605c5ce4
+
+bb_getattr(path="/", statbuf=0x7f827c10)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42300
+    st_mode = 0 40755
+    st_nlink =  2
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  4096
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce7
+    st_mtime = 0x 605c5ce7
+    st_ctime = 0x 605c5ce7
+
+bb_getattr(path="/hi.c", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/hi.c", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/hi.c"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42378
+    st_mode = 0 100644
+    st_nlink =  1
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  636
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce4
+    st_mtime = 0x 605c5ce4
+    st_ctime = 0x 605c5ce4
+
+bb_getattr(path="/", statbuf=0x7f827c10)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42300
+    st_mode = 0 40755
+    st_nlink =  2
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  4096
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce7
+    st_mtime = 0x 605c5ce7
+    st_ctime = 0x 605c5ce7
+
+bb_getattr(path="/hi.c", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/hi.c", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/hi.c"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42378
+    st_mode = 0 100644
+    st_nlink =  1
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  636
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce4
+    st_mtime = 0x 605c5ce4
+    st_ctime = 0x 605c5ce4
+
+bb_getattr(path="/", statbuf=0x7f827c10)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42300
+    st_mode = 0 40755
+    st_nlink =  2
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  4096
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce7
+    st_mtime = 0x 605c5ce7
+    st_ctime = 0x 605c5ce7
+
+bb_getattr(path="/hi.c", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/hi.c", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/hi.c"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42378
+    st_mode = 0 100644
+    st_nlink =  1
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  636
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce4
+    st_mtime = 0x 605c5ce4
+    st_ctime = 0x 605c5ce4
+
+bb_getattr(path="/", statbuf=0x7f827c10)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42300
+    st_mode = 0 40755
+    st_nlink =  2
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  4096
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce7
+    st_mtime = 0x 605c5ce7
+    st_ctime = 0x 605c5ce7
+
+bb_getattr(path="/hi.c", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/hi.c", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/hi.c"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42378
+    st_mode = 0 100644
+    st_nlink =  1
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  636
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce4
+    st_mtime = 0x 605c5ce4
+    st_ctime = 0x 605c5ce4
+
+bb_getattr(path="/", statbuf=0x7f827c10)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42300
+    st_mode = 0 40755
+    st_nlink =  2
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  4096
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce7
+    st_mtime = 0x 605c5ce7
+    st_ctime = 0x 605c5ce7
+
+bb_getattr(path="/hi.c", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/hi.c", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/hi.c"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42378
+    st_mode = 0 100644
+    st_nlink =  1
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  636
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce4
+    st_mtime = 0x 605c5ce4
+    st_ctime = 0x 605c5ce4
+
+bb_getattr(path="/", statbuf=0x7f827c10)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42300
+    st_mode = 0 40755
+    st_nlink =  2
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  4096
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce7
+    st_mtime = 0x 605c5ce7
+    st_ctime = 0x 605c5ce7
+
+bb_getattr(path="/hi.c", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/hi.c", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/hi.c"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42378
+    st_mode = 0 100644
+    st_nlink =  1
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  636
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce4
+    st_mtime = 0x 605c5ce4
+    st_ctime = 0x 605c5ce4
+
+bb_getattr(path="/", statbuf=0x7f827c10)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42300
+    st_mode = 0 40755
+    st_nlink =  2
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  4096
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce7
+    st_mtime = 0x 605c5ce7
+    st_ctime = 0x 605c5ce7
+
+bb_getattr(path="/hi.c", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/hi.c", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/hi.c"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42378
+    st_mode = 0 100644
+    st_nlink =  1
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  636
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce4
+    st_mtime = 0x 605c5ce4
+    st_ctime = 0x 605c5ce4
+
+bb_getattr(path="/", statbuf=0x7f827c10)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42300
+    st_mode = 0 40755
+    st_nlink =  2
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  4096
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce7
+    st_mtime = 0x 605c5ce7
+    st_ctime = 0x 605c5ce7
+
+bb_getattr(path="/hi.c", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/hi.c", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/hi.c"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42378
+    st_mode = 0 100644
+    st_nlink =  1
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  636
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce4
+    st_mtime = 0x 605c5ce4
+    st_ctime = 0x 605c5ce4
+
+bb_getattr(path="/", statbuf=0x7f827c10)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42300
+    st_mode = 0 40755
+    st_nlink =  2
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  4096
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce7
+    st_mtime = 0x 605c5ce7
+    st_ctime = 0x 605c5ce7
+
+bb_getattr(path="/hi.c", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/hi.c", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/hi.c"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42378
+    st_mode = 0 100644
+    st_nlink =  1
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  636
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce4
+    st_mtime = 0x 605c5ce4
+    st_ctime = 0x 605c5ce4
+
+bb_getattr(path="/", statbuf=0x7f827c10)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42300
+    st_mode = 0 40755
+    st_nlink =  2
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  4096
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce7
+    st_mtime = 0x 605c5ce7
+    st_ctime = 0x 605c5ce7
+
+bb_getattr(path="/hi.c", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/hi.c", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/hi.c"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42378
+    st_mode = 0 100644
+    st_nlink =  1
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  636
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce4
+    st_mtime = 0x 605c5ce4
+    st_ctime = 0x 605c5ce4
+
+bb_getattr(path="/", statbuf=0x7f827c10)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42300
+    st_mode = 0 40755
+    st_nlink =  2
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  4096
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce7
+    st_mtime = 0x 605c5ce7
+    st_ctime = 0x 605c5ce7
+
+bb_getattr(path="/hi.c", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/hi.c", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/hi.c"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42378
+    st_mode = 0 100644
+    st_nlink =  1
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  636
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce4
+    st_mtime = 0x 605c5ce4
+    st_ctime = 0x 605c5ce4
+
+bb_getattr(path="/", statbuf=0x7f827c10)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42300
+    st_mode = 0 40755
+    st_nlink =  2
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  4096
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce7
+    st_mtime = 0x 605c5ce7
+    st_ctime = 0x 605c5ce7
+
+bb_getattr(path="/hi.c", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/hi.c", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/hi.c"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42378
+    st_mode = 0 100644
+    st_nlink =  1
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  636
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce4
+    st_mtime = 0x 605c5ce4
+    st_ctime = 0x 605c5ce4
+
+bb_getattr(path="/", statbuf=0x7f827c10)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42300
+    st_mode = 0 40755
+    st_nlink =  2
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  4096
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce7
+    st_mtime = 0x 605c5ce7
+    st_ctime = 0x 605c5ce7
+
+bb_getattr(path="/hi.c", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/hi.c", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/hi.c"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42378
+    st_mode = 0 100644
+    st_nlink =  1
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  636
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce4
+    st_mtime = 0x 605c5ce4
+    st_ctime = 0x 605c5ce4
+
+bb_getattr(path="/", statbuf=0x7f827c10)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42300
+    st_mode = 0 40755
+    st_nlink =  2
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  4096
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce7
+    st_mtime = 0x 605c5ce7
+    st_ctime = 0x 605c5ce7
+
+bb_getattr(path="/hi.c", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/hi.c", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/hi.c"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42378
+    st_mode = 0 100644
+    st_nlink =  1
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  636
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce4
+    st_mtime = 0x 605c5ce4
+    st_ctime = 0x 605c5ce4
+
+bb_getattr(path="/", statbuf=0x7f827c10)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42300
+    st_mode = 0 40755
+    st_nlink =  2
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  4096
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce7
+    st_mtime = 0x 605c5ce7
+    st_ctime = 0x 605c5ce7
+
+bb_getattr(path="/hi.c", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/hi.c", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/hi.c"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42378
+    st_mode = 0 100644
+    st_nlink =  1
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  636
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce4
+    st_mtime = 0x 605c5ce4
+    st_ctime = 0x 605c5ce4
+
+bb_getattr(path="/", statbuf=0x7f827c10)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42300
+    st_mode = 0 40755
+    st_nlink =  2
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  4096
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce7
+    st_mtime = 0x 605c5ce7
+    st_ctime = 0x 605c5ce7
+
+bb_getattr(path="/hi.c", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/hi.c", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/hi.c"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42378
+    st_mode = 0 100644
+    st_nlink =  1
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  636
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce4
+    st_mtime = 0x 605c5ce4
+    st_ctime = 0x 605c5ce4
+
+bb_getattr(path="/", statbuf=0x7f827c10)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42300
+    st_mode = 0 40755
+    st_nlink =  2
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  4096
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce7
+    st_mtime = 0x 605c5ce7
+    st_ctime = 0x 605c5ce7
+
+bb_getattr(path="/hi.c", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/hi.c", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/hi.c"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42378
+    st_mode = 0 100644
+    st_nlink =  1
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  636
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce4
+    st_mtime = 0x 605c5ce4
+    st_ctime = 0x 605c5ce4
+
+bb_getattr(path="/hi.c", statbuf=0x7f827c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/hi.c", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/hi.c"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42378
+    st_mode = 0 100644
+    st_nlink =  1
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  636
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce4
+    st_mtime = 0x 605c5ce4
+    st_ctime = 0x 605c5ce4
+
+bb_getattr(path="/", statbuf=0x7f004c10)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42300
+    st_mode = 0 40755
+    st_nlink =  2
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  4096
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce7
+    st_mtime = 0x 605c5ce7
+    st_ctime = 0x 605c5ce7
+
+bb_access(path="/", mask=01)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/"
+
+bb_getattr(path="/.git", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/.git", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/.git"
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    si:
+    st_dev =  0
+    st_ino =  0
+    st_mode = 0 0
+    st_nlink =  0
+    st_uid =  0
+    st_gid =  0
+    st_rdev =  0
+    st_size =  0
+    st_blksize =  0
+    st_blocks =  0
+    st_atime = 0x 00000000
+    st_mtime = 0x 00000000
+    st_ctime = 0x 00000000
+
+bb_getattr(path="/.git", statbuf=0x7f827c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/.git", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/.git"
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    si:
+    st_dev =  0
+    st_ino =  0
+    st_mode = 0 0
+    st_nlink =  0
+    st_uid =  0
+    st_gid =  0
+    st_rdev =  0
+    st_size =  0
+    st_blksize =  0
+    st_blocks =  0
+    st_atime = 0x 00000000
+    st_mtime = 0x 00000000
+    st_ctime = 0x 00000000
+
+bb_getattr(path="/HEAD", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/HEAD", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/HEAD"
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    si:
+    st_dev =  0
+    st_ino =  0
+    st_mode = 0 0
+    st_nlink =  0
+    st_uid =  0
+    st_gid =  0
+    st_rdev =  0
+    st_size =  0
+    st_blksize =  0
+    st_blocks =  0
+    st_atime = 0x 00000000
+    st_mtime = 0x 00000000
+    st_ctime = 0x 00000000
+
+bb_getattr(path="/", statbuf=0x7f827c10)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42300
+    st_mode = 0 40755
+    st_nlink =  2
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  4096
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce7
+    st_mtime = 0x 605c5ce7
+    st_ctime = 0x 605c5ce7
+
+bb_getattr(path="/hi.c", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/hi.c", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/hi.c"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42378
+    st_mode = 0 100644
+    st_nlink =  1
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  636
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce4
+    st_mtime = 0x 605c5ce4
+    st_ctime = 0x 605c5ce4
+
+bb_getattr(path="/-I", statbuf=0x7f827c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/-I", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/-I"
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    si:
+    st_dev =  0
+    st_ino =  0
+    st_mode = 0 0
+    st_nlink =  0
+    st_uid =  0
+    st_gid =  0
+    st_rdev =  0
+    st_size =  0
+    st_blksize =  0
+    st_blocks =  0
+    st_atime = 0x 00000000
+    st_mtime = 0x 00000000
+    st_ctime = 0x 00000000
+
+bb_getattr(path="/-I", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/-I", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/-I"
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    si:
+    st_dev =  0
+    st_ino =  0
+    st_mode = 0 0
+    st_nlink =  0
+    st_uid =  0
+    st_gid =  0
+    st_rdev =  0
+    st_size =  0
+    st_blksize =  0
+    st_blocks =  0
+    st_atime = 0x 00000000
+    st_mtime = 0x 00000000
+    st_ctime = 0x 00000000
+
+bb_getattr(path="/.deps", statbuf=0x7f827c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/.deps", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/.deps"
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    si:
+    st_dev =  0
+    st_ino =  0
+    st_mode = 0 0
+    st_nlink =  0
+    st_uid =  0
+    st_gid =  0
+    st_rdev =  0
+    st_size =  0
+    st_blksize =  0
+    st_blocks =  0
+    st_atime = 0x 00000000
+    st_mtime = 0x 00000000
+    st_ctime = 0x 00000000
+
+bb_getattr(path="/.deps", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/.deps", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/.deps"
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    si:
+    st_dev =  0
+    st_ino =  0
+    st_mode = 0 0
+    st_nlink =  0
+    st_uid =  0
+    st_gid =  0
+    st_rdev =  0
+    st_size =  0
+    st_blksize =  0
+    st_blocks =  0
+    st_atime = 0x 00000000
+    st_mtime = 0x 00000000
+    st_ctime = 0x 00000000
+
+bb_getattr(path="/src", statbuf=0x7f827c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/src", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/src"
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    si:
+    st_dev =  0
+    st_ino =  0
+    st_mode = 0 0
+    st_nlink =  0
+    st_uid =  0
+    st_gid =  0
+    st_rdev =  0
+    st_size =  0
+    st_blksize =  0
+    st_blocks =  0
+    st_atime = 0x 00000000
+    st_mtime = 0x 00000000
+    st_ctime = 0x 00000000
+
+bb_getattr(path="/src", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/src", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/src"
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    si:
+    st_dev =  0
+    st_ino =  0
+    st_mode = 0 0
+    st_nlink =  0
+    st_uid =  0
+    st_gid =  0
+    st_rdev =  0
+    st_size =  0
+    st_blksize =  0
+    st_blocks =  0
+    st_atime = 0x 00000000
+    st_mtime = 0x 00000000
+    st_ctime = 0x 00000000
+
+bb_getattr(path="/example", statbuf=0x7f827c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/example", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/example"
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    si:
+    st_dev =  0
+    st_ino =  0
+    st_mode = 0 0
+    st_nlink =  0
+    st_uid =  0
+    st_gid =  0
+    st_rdev =  0
+    st_size =  0
+    st_blksize =  0
+    st_blocks =  0
+    st_atime = 0x 00000000
+    st_mtime = 0x 00000000
+    st_ctime = 0x 00000000
+
+bb_getattr(path="/example", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/example", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/example"
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    si:
+    st_dev =  0
+    st_ino =  0
+    st_mode = 0 0
+    st_nlink =  0
+    st_uid =  0
+    st_gid =  0
+    st_rdev =  0
+    st_size =  0
+    st_blksize =  0
+    st_blocks =  0
+    st_atime = 0x 00000000
+    st_mtime = 0x 00000000
+    st_ctime = 0x 00000000
+
+bb_getattr(path="/example", statbuf=0x7f827c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/example", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/example"
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    si:
+    st_dev =  0
+    st_ino =  0
+    st_mode = 0 0
+    st_nlink =  0
+    st_uid =  0
+    st_gid =  0
+    st_rdev =  0
+    st_size =  0
+    st_blksize =  0
+    st_blocks =  0
+    st_atime = 0x 00000000
+    st_mtime = 0x 00000000
+    st_ctime = 0x 00000000
+
+bb_getattr(path="/example", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/example", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/example"
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    si:
+    st_dev =  0
+    st_ino =  0
+    st_mode = 0 0
+    st_nlink =  0
+    st_uid =  0
+    st_gid =  0
+    st_rdev =  0
+    st_size =  0
+    st_blksize =  0
+    st_blocks =  0
+    st_atime = 0x 00000000
+    st_mtime = 0x 00000000
+    st_ctime = 0x 00000000
+
+bb_getattr(path="/.deps", statbuf=0x7f827c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/.deps", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/.deps"
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    si:
+    st_dev =  0
+    st_ino =  0
+    st_mode = 0 0
+    st_nlink =  0
+    st_uid =  0
+    st_gid =  0
+    st_rdev =  0
+    st_size =  0
+    st_blksize =  0
+    st_blocks =  0
+    st_atime = 0x 00000000
+    st_mtime = 0x 00000000
+    st_ctime = 0x 00000000
+
+bb_getattr(path="/.deps", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/.deps", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/.deps"
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    si:
+    st_dev =  0
+    st_ino =  0
+    st_mode = 0 0
+    st_nlink =  0
+    st_uid =  0
+    st_gid =  0
+    st_rdev =  0
+    st_size =  0
+    st_blksize =  0
+    st_blocks =  0
+    st_atime = 0x 00000000
+    st_mtime = 0x 00000000
+    st_ctime = 0x 00000000
+
+bb_getattr(path="/.deps", statbuf=0x7f827c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/.deps", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/.deps"
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    si:
+    st_dev =  0
+    st_ino =  0
+    st_mode = 0 0
+    st_nlink =  0
+    st_uid =  0
+    st_gid =  0
+    st_rdev =  0
+    st_size =  0
+    st_blksize =  0
+    st_blocks =  0
+    st_atime = 0x 00000000
+    st_mtime = 0x 00000000
+    st_ctime = 0x 00000000
+
+bb_getattr(path="/.deps", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/.deps", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/.deps"
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    si:
+    st_dev =  0
+    st_ino =  0
+    st_mode = 0 0
+    st_nlink =  0
+    st_uid =  0
+    st_gid =  0
+    st_rdev =  0
+    st_size =  0
+    st_blksize =  0
+    st_blocks =  0
+    st_atime = 0x 00000000
+    st_mtime = 0x 00000000
+    st_ctime = 0x 00000000
+
+bb_getattr(path="/-I", statbuf=0x7f827c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/-I", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/-I"
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    si:
+    st_dev =  0
+    st_ino =  0
+    st_mode = 0 0
+    st_nlink =  0
+    st_uid =  0
+    st_gid =  0
+    st_rdev =  0
+    st_size =  0
+    st_blksize =  0
+    st_blocks =  0
+    st_atime = 0x 00000000
+    st_mtime = 0x 00000000
+    st_ctime = 0x 00000000
+
+bb_getattr(path="/-I", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/-I", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/-I"
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    si:
+    st_dev =  0
+    st_ino =  0
+    st_mode = 0 0
+    st_nlink =  0
+    st_uid =  0
+    st_gid =  0
+    st_rdev =  0
+    st_size =  0
+    st_blksize =  0
+    st_blocks =  0
+    st_atime = 0x 00000000
+    st_mtime = 0x 00000000
+    st_ctime = 0x 00000000
+
+bb_getattr(path="/.deps", statbuf=0x7f827c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/.deps", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/.deps"
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    si:
+    st_dev =  0
+    st_ino =  0
+    st_mode = 0 0
+    st_nlink =  0
+    st_uid =  0
+    st_gid =  0
+    st_rdev =  0
+    st_size =  0
+    st_blksize =  0
+    st_blocks =  0
+    st_atime = 0x 00000000
+    st_mtime = 0x 00000000
+    st_ctime = 0x 00000000
+
+bb_getattr(path="/.deps", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/.deps", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/.deps"
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    si:
+    st_dev =  0
+    st_ino =  0
+    st_mode = 0 0
+    st_nlink =  0
+    st_uid =  0
+    st_gid =  0
+    st_rdev =  0
+    st_size =  0
+    st_blksize =  0
+    st_blocks =  0
+    st_atime = 0x 00000000
+    st_mtime = 0x 00000000
+    st_ctime = 0x 00000000
+
+bb_getattr(path="/.deps", statbuf=0x7f827c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/.deps", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/.deps"
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    si:
+    st_dev =  0
+    st_ino =  0
+    st_mode = 0 0
+    st_nlink =  0
+    st_uid =  0
+    st_gid =  0
+    st_rdev =  0
+    st_size =  0
+    st_blksize =  0
+    st_blocks =  0
+    st_atime = 0x 00000000
+    st_mtime = 0x 00000000
+    st_ctime = 0x 00000000
+
+bb_getattr(path="/.deps", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/.deps", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/.deps"
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    si:
+    st_dev =  0
+    st_ino =  0
+    st_mode = 0 0
+    st_nlink =  0
+    st_uid =  0
+    st_gid =  0
+    st_rdev =  0
+    st_size =  0
+    st_blksize =  0
+    st_blocks =  0
+    st_atime = 0x 00000000
+    st_mtime = 0x 00000000
+    st_ctime = 0x 00000000
+
+bb_getattr(path="/.deps", statbuf=0x7f827c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/.deps", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/.deps"
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    si:
+    st_dev =  0
+    st_ino =  0
+    st_mode = 0 0
+    st_nlink =  0
+    st_uid =  0
+    st_gid =  0
+    st_rdev =  0
+    st_size =  0
+    st_blksize =  0
+    st_blocks =  0
+    st_atime = 0x 00000000
+    st_mtime = 0x 00000000
+    st_ctime = 0x 00000000
+
+bb_getattr(path="/.deps", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/.deps", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/.deps"
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    si:
+    st_dev =  0
+    st_ino =  0
+    st_mode = 0 0
+    st_nlink =  0
+    st_uid =  0
+    st_gid =  0
+    st_rdev =  0
+    st_size =  0
+    st_blksize =  0
+    st_blocks =  0
+    st_atime = 0x 00000000
+    st_mtime = 0x 00000000
+    st_ctime = 0x 00000000
+
+bb_getattr(path="/-I", statbuf=0x7f827c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/-I", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/-I"
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    si:
+    st_dev =  0
+    st_ino =  0
+    st_mode = 0 0
+    st_nlink =  0
+    st_uid =  0
+    st_gid =  0
+    st_rdev =  0
+    st_size =  0
+    st_blksize =  0
+    st_blocks =  0
+    st_atime = 0x 00000000
+    st_mtime = 0x 00000000
+    st_ctime = 0x 00000000
+
+bb_getattr(path="/-I", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/-I", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/-I"
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    si:
+    st_dev =  0
+    st_ino =  0
+    st_mode = 0 0
+    st_nlink =  0
+    st_uid =  0
+    st_gid =  0
+    st_rdev =  0
+    st_size =  0
+    st_blksize =  0
+    st_blocks =  0
+    st_atime = 0x 00000000
+    st_mtime = 0x 00000000
+    st_ctime = 0x 00000000
+
+bb_getattr(path="/", statbuf=0x7f827c10)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/"
+    lstat returned 0
+    si:
+    st_dev =  2064
+    st_ino =  42300
+    st_mode = 0 40755
+    st_nlink =  2
+    st_uid =  1000
+    st_gid =  1000
+    st_rdev =  0
+    st_size =  4096
+    st_blksize =  4096
+    st_blocks =  8
+    st_atime = 0x 605c5ce7
+    st_mtime = 0x 605c5ce7
+    st_ctime = 0x 605c5ce7
+
+bb_getattr(path="/-I", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/-I", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/-I"
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    si:
+    st_dev =  0
+    st_ino =  0
+    st_mode = 0 0
+    st_nlink =  0
+    st_uid =  0
+    st_gid =  0
+    st_rdev =  0
+    st_size =  0
+    st_blksize =  0
+    st_blocks =  0
+    st_atime = 0x 00000000
+    st_mtime = 0x 00000000
+    st_ctime = 0x 00000000
+
+bb_getattr(path="/-I", statbuf=0x7f827c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/-I", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/-I"
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    si:
+    st_dev =  0
+    st_ino =  0
+    st_mode = 0 0
+    st_nlink =  0
+    st_uid =  0
+    st_gid =  0
+    st_rdev =  0
+    st_size =  0
+    st_blksize =  0
+    st_blocks =  0
+    st_atime = 0x 00000000
+    st_mtime = 0x 00000000
+    st_ctime = 0x 00000000
+
+bb_getattr(path="/.deps", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/.deps", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/.deps"
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    si:
+    st_dev =  0
+    st_ino =  0
+    st_mode = 0 0
+    st_nlink =  0
+    st_uid =  0
+    st_gid =  0
+    st_rdev =  0
+    st_size =  0
+    st_blksize =  0
+    st_blocks =  0
+    st_atime = 0x 00000000
+    st_mtime = 0x 00000000
+    st_ctime = 0x 00000000
+
+bb_getattr(path="/.deps", statbuf=0x7f827c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/.deps", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/.deps"
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    si:
+    st_dev =  0
+    st_ino =  0
+    st_mode = 0 0
+    st_nlink =  0
+    st_uid =  0
+    st_gid =  0
+    st_rdev =  0
+    st_size =  0
+    st_blksize =  0
+    st_blocks =  0
+    st_atime = 0x 00000000
+    st_mtime = 0x 00000000
+    st_ctime = 0x 00000000
+
+bb_getattr(path="/.deps", statbuf=0x7f004c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/.deps", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/.deps"
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    si:
+    st_dev =  0
+    st_ino =  0
+    st_mode = 0 0
+    st_nlink =  0
+    st_uid =  0
+    st_gid =  0
+    st_rdev =  0
+    st_size =  0
+    st_blksize =  0
+    st_blocks =  0
+    st_atime = 0x 00000000
+    st_mtime = 0x 00000000
+    st_ctime = 0x 00000000
+
+bb_getattr(path="/.deps", statbuf=0x7f827c40)
+    bb_fullpath:  rootdir = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir", path = "/.deps", fpath = "/home/ryanpatiency/fuse-tutorial-2018-02-04/example/rootdir/.deps"
+    lstat returned -1
+    ERROR lstat: No such file or directory
+    si:
+    st_dev =  0
+    st_ino =  0
+    st_mode = 0 0
+    st_nlink =  0
+    st_uid =  0
+    st_gid =  0
+    st_rdev =  0
+    st_size =  0
+    st_blksize =  0
+    st_blocks =  0
+    st_atime = 0x 00000000
+    st_mtime = 0x 00000000
+    st_ctime = 0x 00000000
+
+bb_destroy(userdata=0x09bc22a0)
