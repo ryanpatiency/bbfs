@@ -45,3 +45,6 @@ include/Makefile
 
 .deps
 example/main
+example/mountdir
+example/rootdir/drive1
+example/rootdir/drive2

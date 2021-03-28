@@ -7,7 +7,7 @@ int main()
     FILE* fptr;
 
     // use appropriate location if you are using MacOS or Linux
-    fptr = fopen("./bogus.txt", "r+");
+    fptr = fopen("./mountdir/bogus.txt", "r+");
 
     if (fptr == NULL) {
         printf("Error!");

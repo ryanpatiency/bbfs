@@ -1,0 +1,7 @@
+[burst-credits]
+size=800M
+rw=randread
+bs=16M
+ioengine=libaio
+# direct=1
+loops=20

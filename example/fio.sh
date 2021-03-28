@@ -1,0 +1,1 @@
+fio test.fio --filename=./mountdir/drive0 --write_iops_log=test --log_avg_msec=3000

@@ -24,9 +24,15 @@
 #include <limits.h>
 #include <stdio.h>
 struct bb_state {
-    FILE *logfile;
-    char *rootdir;
+    FILE* logfile;
+    char* rootdir;
+    char active_drive[PATH_MAX];
+    int active_fd;
 };
-#define BB_DATA ((struct bb_state *) fuse_get_context()->private_data)
+#define ABSTACT_DRIVE "/drive0"
+#define DRIVE1 "/drive1"
+#define DRIVE2 "/drive2"
+#define CHANGE_DRIVE "/change_drive"
+#define BB_DATA ((struct bb_state*)fuse_get_context()->private_data)
 
 #endif
