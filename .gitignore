@@ -1,4 +1,3 @@
-example/mountdir
 # Compiled Object files
 *.slo
 *.lo
@@ -20,28 +19,6 @@ example/mountdir
 *.exe
 *.out
 *.app
-
-
-*.swp
-*.DS_Store
-*.in
-
-m4/*
-aclocal.m4
-autom4te.cache/
-compile
-config.guess
-config.log
-config.status
-config.sub
-depcomp
-missing
-ltmain.sh
-libtool
-install-sh
-Makefile
-src/Makefile
-include/Makefile
 
 .deps
 example/main
