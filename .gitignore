@@ -3,7 +3,7 @@
 *.lo
 *.o
 *.obj
-
+*.log
 # Compiled Dynamic libraries
 *.so
 *.dylib
@@ -19,7 +19,9 @@
 *.exe
 *.out
 *.app
+src/bbfs
 
+Makefile
 .deps
 example/main
 example/mountdir
