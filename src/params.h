@@ -19,20 +19,22 @@
 // need this to get pwrite().  I have to use setvbuf() instead of
 // setlinebuf() later in consequence.
 #define _XOPEN_SOURCE 500
+#define OPENED_MAX 18
 
 // maintain bbfs state in here
 #include <limits.h>
 #include <stdio.h>
+
 struct bb_state {
     FILE* logfile;
     char* rootdir;
     char active_drive[PATH_MAX];
-    int active_fd;
+    char* open_paths[OPENED_MAX];
 };
-#define ABSTACT_DRIVE "/drive0"
-#define DRIVE1 "/drive1"
-#define DRIVE2 "/drive2"
-#define CHANGE_DRIVE "/change_drive"
+#define ABSTACT_DRIVE "/drive"
+#define DRIVE1 "/driveb"
+#define DRIVE2 "/drivec"
+#define CHANGE_DRIVE "/drive/change_drive"
 #define BB_DATA ((struct bb_state*)fuse_get_context()->private_data)
 
 #endif

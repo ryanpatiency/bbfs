@@ -197,7 +197,7 @@ void log_retstat(char* func, int retstat)
 // possibly logging error
 int log_syscall(char* func, int retstat, int min_ret)
 {
-    log_retstat(func, retstat);
+    // log_retstat(func, retstat);
 
     if (retstat < min_ret) {
         log_error(func);

@@ -51,9 +51,20 @@
 static void bb_fullpath(char fpath[PATH_MAX], const char* path)
 {
     strcpy(fpath, BB_DATA->rootdir);
-    if (strcmp(path, ABSTACT_DRIVE) == 0) {
-        strncat(fpath, BB_DATA->active_drive, PATH_MAX); // ridiculously long paths will
-        // break here
+    char* secondslice = strchr(path + 1, '/');
+    char target[PATH_MAX];
+    if (!secondslice) {
+        strcpy(target, path);
+    } else {
+        int n = (int)(secondslice - path);
+        strncpy(target, path, n);
+        target[n] = '\0';
+    }
+    if (strcmp(target, ABSTACT_DRIVE) == 0) {
+        strncat(fpath, BB_DATA->active_drive, PATH_MAX);
+        if (secondslice) {
+            strcat(fpath, secondslice);
+        }
     } else {
         strncat(fpath, path, PATH_MAX);
     }
@@ -66,9 +77,8 @@ static void bb_changedrive()
     int retstat = 0;
     int fd;
     char fpath[PATH_MAX];
-    for (int i = 0; i < 20; i++) {
-        log_msg("\n########");
-    }
+    char nullname[PATH_MAX];
+    log_msg("\n########");
     if (strcmp(BB_DATA->active_drive, DRIVE1) == 0) {
         strcpy(BB_DATA->active_drive, DRIVE2);
         log_msg("\nchange drive from 1 to 2\n");
@@ -76,16 +86,34 @@ static void bb_changedrive()
         strcpy(BB_DATA->active_drive, DRIVE1);
         log_msg("\nchange drive from 2 to 1\n");
     }
-    for (int i = 0; i < 20; i++) {
-        log_msg("\n########");
-    }
-    log_syscall("close", close(BB_DATA->active_fd), 0);
-    bb_fullpath(fpath, BB_DATA->active_drive);
-    fd = log_syscall("open", open(fpath, O_RDWR), 0);
-    if (fd < 0)
-        retstat = log_error("open");
 
-    BB_DATA->active_fd = fd;
+    for (int fd = 5; fd < OPENED_MAX; fd++) {
+        int newfd;
+        if (BB_DATA->open_paths[fd]) {
+            log_syscall("close", close(fd), 0);
+            log_msg("close fd: %d for reopening\n", fd);
+            bb_fullpath(fpath, BB_DATA->open_paths[fd]);
+        } else {
+            strcpy(nullname, "/nullname#");
+            snprintf(nullname + strlen(nullname), PATH_MAX, "%d", fd);
+            bb_fullpath(fpath, nullname);
+        }
+        newfd = log_syscall("open", open(fpath, O_RDWR | O_CREAT, 0644), 0);
+        if (newfd < 0 || newfd != fd) {
+            retstat = log_error("open");
+            return;
+        }
+    }
+    for (int fd = 5; fd < OPENED_MAX; fd++) {
+        if (!BB_DATA->open_paths[fd]) {
+            log_syscall("close", close(fd), 0);
+            strcpy(nullname, "/nullname#");
+            snprintf(nullname + strlen(nullname), PATH_MAX, "%d", fd);
+            bb_fullpath(fpath, nullname);
+            log_syscall("unlink", unlink(fpath), 0);
+        }
+    }
+    log_msg("\n########");
 }
 
 ///////////////////////////////////////////////////////////
@@ -334,8 +362,6 @@ int bb_open(const char* path, struct fuse_file_info* fi)
     char fpath[PATH_MAX];
 
     bb_fullpath(fpath, path);
-    log_msg("\nbb_open(path\"%s\", fi=0x%08x)\n",
-        path, fi);
 
     // if the open call succeeds, my retstat is the file descriptor,
     // else it's -errno.  I'm making sure that in that case the saved
@@ -344,12 +370,12 @@ int bb_open(const char* path, struct fuse_file_info* fi)
     if (fd < 0)
         retstat = log_error("open");
 
-    fi->fh = fd;
-    if (strcmp(path, ABSTACT_DRIVE) == 0) {
-        BB_DATA->active_fd = fd;
-    }
+    log_msg("\nbb_open(path\"%s\", fd=%d)\n", path, fd);
 
-    log_fi(fi);
+    fi->fh = fd;
+    fi->direct_io = 1;
+    BB_DATA->open_paths[fd] = malloc(strlen(path) + 1);
+    strcpy(BB_DATA->open_paths[fd], path);
 
     return retstat;
 }
@@ -455,9 +481,8 @@ int bb_statfs(const char* path, struct statvfs* statv)
 // this is a no-op in BBFS.  It just logs the call and returns success
 int bb_flush(const char* path, struct fuse_file_info* fi)
 {
-    log_msg("\nbb_flush(path=\"%s\", fi=0x%08x)\n", path, fi);
+    log_msg("\nbb_flush(path=\"%s\", fd=%d)\n", path, fi->fh);
     // no need to get fpath on this one, since I work from fi->fh not the path
-    log_fi(fi);
 
     return 0;
 }
@@ -478,13 +503,14 @@ int bb_flush(const char* path, struct fuse_file_info* fi)
  */
 int bb_release(const char* path, struct fuse_file_info* fi)
 {
-    log_msg("\nbb_release(path=\"%s\", fi=0x%08x)\n",
-        path, fi);
-    log_fi(fi);
+    log_msg("\nbb_release(path=\"%s\", fd=%d)\n", path, fi->fh);
 
     // We need to close the file.  Had we allocated any resources
     // (buffers etc) we'd need to free them here as well.
-    return log_syscall("close", close(fi->fh), 0);
+    int ret = log_syscall("close", close(fi->fh), 0);
+    free(BB_DATA->open_paths[fi->fh]);
+    BB_DATA->open_paths[fi->fh] = NULL;
+    return ret;
 }
 
 /** Synchronize file contents
@@ -769,8 +795,8 @@ int bb_access(const char* path, int mask)
     int retstat = 0;
     char fpath[PATH_MAX];
 
-    log_msg("\nbb_access(path=\"%s\", mask=0%o)\n",
-        path, mask);
+    // log_msg("\nbb_access(path=\"%s\", mask=0%o)\n",
+    //     path, mask);
     bb_fullpath(fpath, path);
 
     retstat = access(fpath, mask);

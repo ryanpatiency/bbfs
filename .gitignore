@@ -21,6 +21,7 @@
 *.app
 src/bbfs
 
+fio_test_file
 Makefile
 .deps
 example/main
