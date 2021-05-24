@@ -30,11 +30,14 @@ struct bb_state {
     char* rootdir;
     char active_drive[PATH_MAX];
     char* open_paths[OPENED_MAX];
+    int to_buffer;
 };
+
 #define ABSTACT_DRIVE "/drive"
 #define DRIVE1 "/driveb"
 #define DRIVE2 "/drivec"
 #define CHANGE_DRIVE "/drive/change_drive"
+#define TO_BUFFER "/drive/to_buffer"
 #define BB_DATA ((struct bb_state*)fuse_get_context()->private_data)
 
 #endif

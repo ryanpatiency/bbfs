@@ -48,6 +48,39 @@
 //  have the mountpoint.  I'll save it away early on in main(), and then
 //  whenever I need a path for something I'll call this to construct
 //  it.
+
+struct Write {
+    char* path;
+    char* buf;
+    size_t size;
+    off_t offset;
+    struct fuse_file_info* fi;
+    struct Write* next;
+};
+
+struct Write* create_write(const char* path, const char* buf, size_t size, off_t offset, struct fuse_file_info* fi)
+{
+    struct Write* write = malloc(sizeof(struct Write));
+    write->path = malloc(strlen(path) + 1);
+    strcpy(write->path, path);
+    write->buf = malloc(size);
+    memcpy(write->buf, buf, size);
+    write->size = size;
+    write->offset = offset;
+    write->fi = malloc(sizeof(struct fuse_file_info));
+    memcpy(write->fi, fi, sizeof(struct fuse_file_info));
+    write->next = NULL;
+    return write;
+}
+void free_write(struct Write* write)
+{
+    free(write->path);
+    free(write->buf);
+    free(write->fi);
+    free(write);
+}
+struct Write *write_head, *write_curr;
+
 static void bb_fullpath(char fpath[PATH_MAX], const char* path)
 {
     strcpy(fpath, BB_DATA->rootdir);
@@ -178,6 +211,18 @@ int bb_readlink(const char* path, char* link, size_t size)
     return retstat;
 }
 
+void bb_buffer_to_new_drive()
+{
+    struct Write* curr = write_head->next;
+    struct Write* next;
+    while (curr) {
+        int retstat = pwrite(curr->fi->fh, curr->buf, curr->size, curr->offset);
+        next = curr->next;
+        free_write(curr);
+        curr = next;
+    }
+}
+
 /** Create a file node
  *
  * There is no create() operation, mknod() will be called for
@@ -191,7 +236,15 @@ int bb_mknod(const char* path, mode_t mode, dev_t dev)
 
     if (strcmp(path, CHANGE_DRIVE) == 0) {
         bb_changedrive();
+        bb_buffer_to_new_drive();
+        BB_DATA->to_buffer = 0;
+        free(write_head);
         return 1;
+    } else if (strcmp(path, TO_BUFFER) == 0) {
+        BB_DATA->to_buffer = 1;
+        write_head = malloc(sizeof(struct Write));
+        write_head->next = NULL;
+        write_curr = write_head;
     }
 
     log_msg("\nbb_mknod(path=\"%s\", mode=0%3o, dev=%lld)\n",
@@ -428,7 +481,13 @@ int bb_write(const char* path, const char* buf, size_t size, off_t offset,
     // no need to get fpath on this one, since I work from fi->fh not the path
     log_fi(fi);
 
-    return log_syscall("pwrite", pwrite(fi->fh, buf, size, offset), 0);
+    retstat = log_syscall("pwrite", pwrite(fi->fh, buf, size, offset), 0);
+    if (BB_DATA->to_buffer) {
+        struct Write* write = create_write(path, buf, size, offset, fi);
+        write_curr->next = write;
+        write_curr = write;
+    }
+    return retstat;
 }
 
 /** Get file system statistics
@@ -973,6 +1032,7 @@ int main(int argc, char* argv[])
 
     // Pull the rootdir out of the argument list and save it in my
     // internal data
+    bb_data->to_buffer = 0;
     bb_data->rootdir = realpath(argv[argc - 2], NULL);
     argv[argc - 2] = argv[argc - 1];
     argv[argc - 1] = NULL;
